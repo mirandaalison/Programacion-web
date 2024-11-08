@@ -1,0 +1,60 @@
+body{
+    background-color: antiquewhite;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1{
+    text-align: center;
+    color: blueviolet;
+}
+
+h2{
+    color: blue;
+}
+
+p{
+    color: black ;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+ol{
+    color: darkslategrey;
+}
+
+strong{
+
+}
+
+dd{
+    font-family: 'Times New Roman', Times, serif;
+    color: darkslategrey;
+}
+
+dt{
+    color: darkslategrey;
+}
+
+footer{
+    text-align: center;
+    color: darkgray;
+}
+
+.estilop{
+    color: brown;
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#caracteristicas{
+    color: brown;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+}
+
+.container{
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
