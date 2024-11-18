@@ -1,0 +1,57 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif0;
+    color: aliceblue;
+    background-color: darkcyan;
+}
+
+
+header{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,72,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+caption{
+    background-color: burlywood;
+}
+
+td{
+    text-align: center;
+}
+
+
+input[type="text"]{
+    background-color: rgb(187, 171, 151);
+    border-bottom: 2px solid #000;
+    border-radius: 10px;
+    color: aquamarine;
+    outline: none;
+}
+
+input[type="password"]{
+    background-color: brown;
+    border-bottom: 1px solid #000;
+    border-radius: 10px;
+    color: aquamarine;
+    outline: none;
+}
+
+/* input{
+    border-radius: 10px;
+    border: #000;
+    outline: none;
+} */
+
+::placeholder{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(255, 240, 240);
+}
+
+input[type="password"]::placeholder{
+    color: rgb(212, 190, 163);
+}
+
+#txtNombres::placeholder{
+    color: #000;
+}
+
+

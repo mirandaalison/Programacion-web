@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tablasbg.css">
+</head>
+<body>
+    <header>
+        <h1>TABLAS</h1>
+        <p>El uso de la etiqueta <em>table</em>, es para el envío y recepción de información</p>
+    </header>
+    <section>
+        <article>
+            <table frame="hsides" rules="rows" border="3px" cellpadding ="10px" cellspacing ="0px">
+                <caption align="bottom">DATOS</caption>
+                <colgroup>
+                    <col style="background-color: darkgray;">
+                    <col style="background-color: darkkhaki;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th align="center" width="300px">Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Dirección</th>
+                        <!--<th>Teléfono</th>-->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td align="center" rowspan="4">Alison</td>
+                        <td>Miranda</td>
+                        <td rowspan="4">Sangolquí</td>
+                        <!--<td>0993190749</td>-->
+                    </tr>
+                    <tr>
+                        <!--<td>Alison</td>-->
+                        <td>Miranda</td>
+                        <!--<td>Sangolquí</td>-->
+                        <!--<td>0993190749</td>-->
+                    </tr>
+                    <tr>
+                        <!--<td>Alison</td>-->
+                        <td>Miranda</td>
+                        <!--<td>Sangolquí</td>-->
+                        <!--<td>0993190749</td>-->
+                    </tr>
+                    <tr>
+                        <!--<td>Alison</td>-->
+                        <td>Miranda</td>
+                        <!--<td>Sangolquí</td>-->
+                        <!--<td>0993190749</td>-->
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <td>sum</td>
+                    <td>sum</td>
+                    <td>sum</td>
+                    <!--<td>0000000000</td>-->
+                </tfoot>
+            </table>
+            <br><br>
+            <form action="submit" method= "post">
+                <label for="">Nombres:</label>
+                <input type="text" minlength="5" maxlength="20" id="txtNombres" placeholder="nombres">
+                <br>
+                <label for="">Apellidos:</label>
+                <input type="text" id="txtApellidos" placeholder="apellidos">
+                <br>
+                <label for="">Contraseña:</label>
+                <input type="password" id="txtContraseña" placeholder="contraseña">
+                <br>
+                <label for="">Tipo de persona: </label>
+                <select name="" id="cboTipo">
+                    <option value="">Cliente</option>
+                    <option value="">Empleado</option>
+                    <option value="">Administrador</option>
+                </select>
+                <br><br>
+                <textarea name="" id="taObservacion">Comentarios</textarea>
+                <br>
+                <input type="submit" value="Enviar Datos">
+            </form>
+        </article>
+    </section>
+</body>
+</html>
