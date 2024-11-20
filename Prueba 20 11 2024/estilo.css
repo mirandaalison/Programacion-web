@@ -1,0 +1,88 @@
+header {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,129,220,1) 19%, rgba(183,153,230,1) 43%, rgba(0,212,255,1) 100%);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: bisque;
+    justify-content: center;
+    align-items: center;
+    margin-left: 320px;
+    text-align: center;
+}
+
+body > h2 {
+    text-align: left;
+}
+
+.cajaLogin {
+    background-color: darkgrey;
+    padding: 30px;
+    border-radius: 5px;
+    width: 500px;
+    text-align: center;
+}
+
+aside > h1 {
+    background-color: brown;
+    font-size: larger;
+    text-align: left;
+}
+h2 {
+    color: #333;
+}
+
+label {
+    text-align: left;
+    color: #555;
+}
+
+input {
+    padding: 10px;
+    font-size: 14px;
+}
+
+p {
+    font-size: 14px;
+    color: #555;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.boton {
+    color: white;
+    background-color: blueviolet;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.aside2 {
+    padding: 10px;
+    background-color: aliceblue;
+    text-align: center;
+    position: fixed;
+    right: 0;
+    top: 400px;
+    width: 200px;
+}
+
+.aside3 {
+    background-color: lightgray; 
+    width: 300px; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    height: 100%; 
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    background-color: black;
+}
+
