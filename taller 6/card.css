@@ -1,13 +1,18 @@
-*{
+* {
     margin: 0px;
 }
 
-body{
+body {
     height: 100%;
-    background-color: rgb(157, 200, 232);
+    background-color: white; 
+    font-family: Arial, sans-serif;
 }
 
-.card{
+body:hover{
+    background-color: #000000;
+}
+
+.card {
     box-shadow: #000000 0px 0px 50px;
     margin: auto;
     margin-top: 50px;
@@ -16,9 +21,31 @@ body{
     width: 500px;
 }
 
-.card-header{
+.card-header {
     height: 350px;
-    background-image: url("https://i.sstatic.net/VJBJq.png");
+    background-image: url("https://www.skole.ec/1494-large_default/camiseta-deportiva-gris.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative; /* para poner el view details y no se me mueva */
+}
+
+.card-header:hover::after { /*contenido despues de la animacion*/
+    content: "VIEW DETAILS"; 
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    background-color: black;
+    color: white; /* de la letra */
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-header:hover {
+    transform: scaleX(1.2); /* transformación horizontal */
+    filter: invert(1);
+    filter: brightness(0.3); /* para que se opacidad */
 }
 
 .card-content{
@@ -26,15 +53,27 @@ body{
     padding: 40px;
 }
 
-h4{
+.product-info {
+    display: flex; /* adidas y precio misma línea */
+    justify-content: space-between; 
+    align-items: center; /* alinear vertical */
+}
+
+.price {
+    font-size: 20px; 
+    font-weight: bold; 
+    color: #333; 
+}
+
+h4 {
     color: gray;
 }
 
-.size{
+.size {
     margin-top: 50px;
 }
 
-.color{
+.color {
     margin-top: 40px;
 }
 
@@ -45,6 +84,7 @@ h4{
     color: red;
     width: 10px;
     height: 10px;
+    display: inline-block;
 }
 
 .blue{
@@ -54,6 +94,7 @@ h4{
     color: blue;
     width: 10px;
     height: 10px;
+    display: inline-block;
 }
 
 .white{
@@ -63,6 +104,7 @@ h4{
     color: white;
     width: 10px;
     height: 10px;
+    display: inline-block;
 }
 
 .green{
@@ -72,5 +114,5 @@ h4{
     color: green;
     width: 10px;
     height: 10px;
+    display: inline-block;
 }
-

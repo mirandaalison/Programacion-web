@@ -1,0 +1,36 @@
+header{
+    background-color: darkblue;
+    color: aliceblue;
+    text-align: center;
+    font-weight: bold;
+}
+
+body{
+    background-color: bisque;
+}
+
+section{
+    background-color: aliceblue;
+}
+
+footer{
+    background-color: blue;
+    color: aliceblue;
+    text-align: center;
+}
+
+#revista{
+    width: 600px;
+    padding: 10px;
+    border: 1px solid black;
+
+    /* creacionde columnas para el elmento article */
+    column-count: 3;
+    column-gap: 20px;
+    /* estilos */
+    column-rule-style: dotted;
+    column-rule-color: red;
+    column-rule-width: 10px;
+    /* esos 3 estilos puedo poner en una sola linea */
+    column-rule: 1px solid red;
+}

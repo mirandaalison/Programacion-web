@@ -1,0 +1,15 @@
+#noticias{
+    width: 500px;
+    padding: 10px;
+    border: 1px solid black;
+
+    /* creacionde columnas para el elmento article */
+    column-count: 4;
+    column-gap: 20px;
+    /* estilos */
+    column-rule-style: dotted;
+    column-rule-color: red;
+    column-rule-width: 10px;
+    /* esos 3 estilos puedo poner en una sola linea */
+    column-rule: 1px solid red;
+}
