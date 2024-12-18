@@ -1,0 +1,49 @@
+/* Estilo base para la página */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+    color: black;
+    .pelota{
+        border-radius: 50%;
+        animation: rebotar 3s infinite;
+
+    }
+}
+
+/* Fondo para pantallas pequeñas (ancho <= 600px) */
+@media (max-width: 600px) {
+    body {
+        background-color: rgb(123, 188, 210);
+    }
+    .pelota{
+        border-radius: 50%;
+        animation: rebotar 3s infinite;
+
+    }
+
+}
+
+@keyframes rotar {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rebotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+}
+
+}
+
+

@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+}
+
+body{
+    background-color: aliceblue;
+    height: 100%;
+}
+
+@keyframes cambioColores {
+    0%{
+        background-color: brown;
+    }
+
+    25%{
+        background-color: crimson;
+        transform: scale(0.5); /* que se amplia la mitad */
+    }
+
+    50%{
+        background-color: darkred;
+        transform: scale(1.1);
+    }
+
+    75%{
+        background-color: red;
+        transform: scale(0.5);
+    }
+
+    100%{
+        background-color: brown;
+    }
+}
+
+.circulo{
+    background-color: brown;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation: cambioColores, volar;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease; /* comienza lento, acelera y decsalera suavenete*/
+    animation-timing-function: steps(5,end); /* divide la animacion en 5 pasos, ocurre al momento*/
+}
+
+@keyframes volar {
+    0%{
+
+    }
+
+    20%{
+        transform: translate(200px,0px);
+    }
+
+    30%{
+        transform: translate(200px,0px) rotate(90deg);
+    }
+
+    40%{
+        transform: translate(200px,200px) rotate(90deg)
+    }
+
+    50%{
+        transform: translate(200px,0px) rotate(180deg)
+    }
+
+    100%{
+
+    }
+}
+
+.avion{
+    animation-name: volar;
+    animation-duration: 3s;
+}
