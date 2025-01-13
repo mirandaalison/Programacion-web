@@ -220,3 +220,197 @@ console.log(personaString);
 
 
 
+
+
+
+//METODOS GET EN OBJETOS JS
+// Metodos que se usan a manera de buenas practicas 
+// que permiten acceder y modificar dichos objetos
+// acceder a los valores de las propiedades
+let personaGET = {
+    nombre: 'Marco',
+    apellido: 'Valdiviezo',
+    email: 'mvaldiviezo@gmail.com',
+    edad: 23,
+    get nombreCompleto(){ // no es una propiedad, es ahora un metodo GET, no devulce funcion, ahora devuelve metodo
+        return this.nombre + ' ' + this.apellido;
+    }
+}
+
+console.log(personaGET.nombreCompleto);
+
+
+
+//METODOS SET EN OBJETOS DE JS
+// establece o modifica los valores de los atributos de los objetos
+
+//validacion
+let personaSET = {
+    nombre: 'Marco',
+    apellido: 'Valdiviezo',
+    email: 'mvaldiviezo@gmail.com',
+    edad: 23,
+    idioma: 'es',
+    get lang(){
+        return this.idioma.toUpperCase();
+    },
+    get nombreCompleto(){ // no es una propiedad, es ahora un metodo GET, no devulce funcion, ahora devuelve metodo
+        return this.nombre + ' ' + this.apellido;
+    }
+}
+
+console.log(personaSET.lang);
+
+
+
+
+//Set
+let personaSET2 = {
+    nombre: 'Marco',
+    apellido: 'Valdiviezo',
+    email: 'mvaldiviezo@gmail.com',
+    edad: 23,
+    idioma: 'es',
+    get lang(){
+        return this.idioma.toUpperCase();
+    },
+    set lang(lang){
+        this.idioma = lang.toUpperCase();
+    },
+    get nombreCompleto(){ // no es una propiedad, es ahora un metodo GET, no devulce funcion, ahora devuelve metodo
+        return this.nombre + ' ' + this.apellido;
+    }
+}
+
+console.log(personaSET2.lang); // aqui uso el get
+
+personaSET2.lang = 'en'; // para usar el set le mando un dato y llamo a la funcion
+console.log(personaSET2.lang);
+
+
+
+
+
+
+//CONSTRUCTORES EN JS
+// si se desea crear mas objetos del mismo tipo esto NO ES POSIBLE
+// es por esllo que se crean los constructores
+
+// es una funcion espeacial que permite trabajar con objetos en JS
+
+//funcion constructora de tipo persona
+function PersonaFC(nombre, apellido, email){
+    this.nombre = nombre; //izq propiedades, derecha valores
+    this.apellido = apellido;
+    this.email = email;
+}
+
+let padreFC = new personaFC = new PersonaFC('Juan', 'Sanchez', 'jsanchez@gamil.com'); // la variable ya no es variable, ahora es un metodo que permite crear un obejto de tipo persona
+console.log(padreFC);
+
+let madreFC = new personaFC = new PersonaFC('Laura', 'Moya', 'lmoya@gamil.com');
+console.log(madreFC);
+
+padreFC.tlf = '2587414'; //agrega propiedad SOLO al obejto que se cree
+
+console.log(padreFC);
+console.log(madreFC);
+
+
+
+
+
+
+//agregar un metodo a una funcion constructora de objetos
+function PersonaFCM(nombre, apellido, email){
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.email = email;
+    this.nombreCompleto = function(){ // no es una propiedad, es ahora un metodo GET, no devulce funcion, ahora devuelve metodo
+        return this.nombre + ' ' + this.apellido;
+    }
+}
+
+let padreFCM = new PersonaFCM('Juan', 'Sanchez', 'jsanchez');
+console.log(padreFCM.nombreCompleto());
+
+let madreFCM = new PersonaFCM('Laura', 'MOya', 'lmoya');
+console.log(padreFCM.nombreCompleto());
+
+
+//uso de prototype, agrega propiedad a TODOS lso obejtos que se creen
+PersonaFCM.prototype.telefono = '2478555';
+
+console.log(padreFCM.nombreCompleto());
+console.log(madreFCM.nombreCompleto());
+
+
+//uso de CALL
+let personaCall1 = {
+    nombre: 'Marco',
+    apellido: 'Valdiviezo',
+    nombreCompleto : function(){
+        return this.nombre + ' ' + this.apellido;
+    }
+}
+
+let personaCall2 = {
+    nombre: 'Andres',
+    apellido: 'Farias',
+}
+
+// para usar el metodo nombreCompleto que pertenece al objeto personaCall1
+// con los datos del obejto que está en personaCall2
+
+console.log(personaCall1.nombreCompleto);
+
+console.log(personaCall1.nombreCompleto.call(personaCall2));
+
+
+// como pasar parametros a traves del metodo call
+let personaCallParam1 = {
+    nombre: 'Marco',
+    apellido: 'Valdiviezo',
+    nombreCompleto : function(titulo, telefono){
+        return titulo + ' ' + this.nombre + ' ' + this.apellido + telefono; // no pongo this en telefono ni titulo pq estoy accediendo a valor fuera del objeto
+    }
+}
+
+let personaCallParam2 = {
+    nombre: 'Andres',
+    apellido: 'Farias',
+}
+
+console.log(personaCallParam1.nombreCompleto('Lic.', '1247855'));
+console.log(personaCallParam1.nombreCompleto.call(personaCall2('Ing.', '5578555')));
+
+
+
+
+
+
+//uso del metodo apply
+let personaApply1 = {
+    nombre: 'Diego',
+    apellido: 'Salas',
+    nombreCompleto : function(titulo, telefono){
+        return this.nombre + ' ' + this.apellido;
+}
+
+let personaApply2 = {
+    nombre: 'Andres',
+    apellido: 'Farias',
+}
+
+console.log(personaApply1.nombreCompleto());
+console.log(personaApply1.nombreCompleto.apply(personaApply2));
+
+let arreglo = ['Ing.', '8645624565']
+
+console.log(personaApply1.nombreCompleto.apply(personaApply2, arreglo)); //se diferencia del call el apply por la forma de enviar argumentos
+console.log(personaApply1.nombreCompleto.apply(personaApply2, ['Ing.', '8645624565'])); // tmb puedo enviar de esta manera
+
+
+
+
+
