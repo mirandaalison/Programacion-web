@@ -5,6 +5,11 @@ class Producto {
     static contadorProductos = 0;
 
     constructor(nombre, precio, stock, categoria) { 
+
+        if (precio < 0) {
+            console.log("El precio no debe ser negativo");
+        }
+
         this._idProducto = ++Producto.contadorProductos;
         this._nombre = nombre;
         this._precio = precio;
@@ -28,10 +33,8 @@ class Producto {
         return this._precio;
     }
 
-    set precio(precio) {
-        if (precio < 0) {
-            console.log("El precio no debe ser negativo");
-        }
+    set precio(precio){
+        this._precio = precio;  
     }
 
     get stock() {
@@ -56,7 +59,7 @@ class Producto {
 }
 
 // PROBANDO
-let producto1 = new Producto('Pantalon', 200, 10, 'ropa');
+let producto1 = new Producto('Pantalon', -200, 10, 'ropa');
 let producto2 = new Producto('Vestido', 300, 10, 'ropa');
 console.log(producto1.toString());
 console.log(producto2.toString());
@@ -98,6 +101,13 @@ class Orden{
             console.log(`Producto vendido`);
         } else {
             console.log(`No hay stock suficiente para vender`);
+            for (let i = 0; i < this._productos.length; i++) {
+                if (this._productos[i].idProducto === producto.idProducto) {
+                    this._productos.splice(i, 1);
+                    console.log(`Producto ${producto.nombre} eliminado de la orden por falta de stock.`);
+                    break; 
+                }
+            }
         }
     }
 
