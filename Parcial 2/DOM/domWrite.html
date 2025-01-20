@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .azul{
+            color: blue;
+        }
+    </style>
+    <title> FORMULARIOS DE DOM en JavaScript</title>
+</head>
+<body>
+        <h1 id="titulo">manejo de dom con js</h1>
+        <button id="btnMostrar" onclick="mostrarValores()" type="submit"> mostrarValores</button>
+        <br>
+        <div id="valores">
+
+        </div>
+
+        <script>
+            function mostrar(){
+                document.getElementById('titulo').innerHTML = '<br> Nuevo titulo';
+            }
+        </script>
+
+</body>
+</html>

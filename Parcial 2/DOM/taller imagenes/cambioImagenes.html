@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de Imagenes</title>
+</head>
+<body>
+
+    <h1 class="titulo">CAMBIO DE IMÁGENES</h1>
+    <img id="imagen" src="imagen1.jpg" alt="Imagen" width="300" height="200">
+    <br>
+    <button onclick="iniciarCambio()">CAMBIAR</button>
+
+    <script>
+        let imagenes = [
+            'imagen1.jpg',
+            'imagen2.jpg',
+            'imagen3.jpg',
+            'imagen4.jpg'
+        ];
+
+        let indice = 0;
+
+        function iniciarCambio() {
+            setInterval(function() {
+                document.getElementById('imagen').src = imagenes[indice];
+                indice = (indice + 1) % imagenes.length;
+            }, 500); 
+        }
+    </script>
+</body>
+</html>
+
+
