@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento Onload</title>
+</head>
+<body onload="entrar()">
+    <h1>Eventos OnLoad()</h1>
+
+    <!-- esto se ejecuta cuando se termnian de ejcutar la agian actual -->
+
+
+    <div id="mostrar()">
+
+    </div>
+
+
+
+    <script>
+        function entrar(){
+            alert('entrando a la pagina web');
+
+        //manejo de cookies
+        // son archivos que guardan informacion cuando navegamos por la web
+        // una forma de verificar que kas cookies estan habilitadas en el navegador
+        let texto = '';
+        if(navigator.cookieEnabled){
+            texto = 'cookies estan habilitadas';
+        }else{
+            texto = 'cookies estan inhabilitadas';
+        }
+
+        document.getElementById('mostrar').innerHTML = texto; // formado por una llave y su respectivo valor
+
+        }
+
+
+    </script>
+</body>
+</html>

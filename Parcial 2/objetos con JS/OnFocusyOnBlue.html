@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento Onload</title>
+</head>
+<body onload="entrar()">
+    <h1 id="titulo" onmousedown="rojo(this)" onmouseup="azul(this)">Eventos OnFocus y OnBlur</h1>
+    <br>
+    <br>
+    Nombre: <input type="text" onfocus="cambiar(this)" onblur="regresar(this)">
+    <br>
+    <br>
+    Apellido: <input type="text" onfocus="cambiar(this)" onblur="regresar(this)">
+
+    <script>
+        function cambiar(elementInput){
+            elementInput.style.background = 'yellow';
+        
+        }
+
+        function regresar(elementInput){
+            elementInput.style.background = 'white';
+        
+        }
+
+    </script>
+</body>
+</html>

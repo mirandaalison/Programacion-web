@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TALLER 22 01 2025</title>
+</head>
+<body>
+  <h1>Panel de Control</h1>
+
+  <button id="panel">Mostrar Panel</button>
+
+  <div id="panelDeConfiguracion" style="display: none; border: 1px solid black; padding: 10px; margin-top: 10px;">
+
+    <label>Cambiar Tema:
+      <select id="tema">
+        <option value="white">Claro</option>
+        <option value="black">Oscuro</option>
+        <option value="blue">Azul</option>
+      </select>
+    </label>
+    <br><br>
+
+    <label>Actualizar Titulo:
+      <input type="text" id="titulo">
+    </label>
+    <br><br>
+
+    <label>
+      <input type="checkbox" id="habilitarComentarios"> Habilitar comentarios
+    </label>
+    <br>
+    <textarea id="comentarios"></textarea>
+    <br><br>
+
+    <label>Agregar elemento:
+      <input type="text" id="nuevoElemento" placeholder="Nuevo elemento">
+    </label>
+    <button id="agregarElemento">Agregar</button>
+  </div>
+
+  <h2>Lista de elementos</h2>
+  <ul id="lista">
+    <li>Elemento 1</li>
+    <li>Elemento 2</li>
+    <li>Elemento 3</li>
+  </ul>
+
+  <script>
+    let _btnPanel = document.getElementById('panel');
+    let _panel = document.getElementById('panelDeConfiguracion');
+    let _tema = document.getElementById('tema');
+    let _tituloIngresado = document.getElementById('titulo');
+    let _checkbox = document.getElementById('habilitarComentarios');
+    let _comentarios = document.getElementById('comentarios');
+    let _elementoIngresado = document.getElementById('nuevoElemento');
+    let _agregarElemento = document.getElementById('agregarElemento');
+    let _lista = document.getElementById('lista');
+
+    _btnPanel.onclick = function () {
+      if (_panel.style.display === 'block') {
+        _panel.style.display = 'none';
+        _btnPanel.textContent = 'Mostrar Panel';
+      } else {
+        _panel.style.display = 'block';
+        _btnPanel.textContent = 'Ocultar Panel';
+      }
+    };
+
+    _tema.onchange = function () {
+      document.body.style.backgroundColor = _tema.value;
+    };
+
+    _tituloIngresado.oninput = function () {
+      document.querySelector('h1').textContent = _tituloIngresado.value || 'Panel de Control';
+    };
+
+    _checkbox.onchange = function () {
+      if (_checkbox.checked) {
+        _comentarios.disabled = false;
+      } else {
+        _comentarios.disabled = true;
+      }
+    };
+
+    _agregarElemento.onclick = function () {
+      var nuevoTexto = _elementoIngresado.value.trim();
+      if (nuevoTexto) {
+        var li = document.createElement('li');
+        li.textContent = nuevoTexto;
+        _lista.appendChild(li);
+        _elementoIngresado.value = '';
+      }
+    };
+
+    _lista.onclick = function (event) {
+      if (event.target.tagName === 'LI') {
+        _lista.removeChild(event.target);
+      }
+    };
+  </script>
+</body>
+</html>
+
+

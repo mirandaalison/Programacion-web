@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de eventos con DOM en JS</title>
+</head>
+<body>
+    <h1 id="titulo" onclick="mostrar(this)"> Evento Onclick()</h1>     
+
+    <script>
+        document.getElementById('titulo').onclick = cambiarTexto;
+
+        //estamos haciendo refrencia, no estamos llamdno a la funcion
+        //es una funcion de tipo callback, cando se aplique ele vento llamo a la funcion, cuando declaro solamente hago refrencia
+
+        function cambiarTexto(){
+            document.getElementById('titulo').innerHTML = 'Otro nuevo cambio';
+        }
+    
+    </script>
+
+
+</body>
+</html>
